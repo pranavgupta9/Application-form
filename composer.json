@@ -19,7 +19,7 @@
     "extra": {
         "_readme": [
             "By default Drupal loads the autoloader from ./vendor/autoload.php.",
-            "To change the autoloader you can edit ./autoload.php."
+            "To change the autoloader you can  edit ./autoload.php."
         ],
         "merge-plugin": {
             "include": [
