@@ -1,0 +1,58 @@
+# This file brings everything together. Very nifty!
+
+# Route name can be used in several places; e.g. links, redirects, and local
+# actions.
+entity.tweet_view_tweet.canonical:
+  path: '/tweet_view_tweet/{tweet_view_tweet}'
+  defaults:
+  # Calls the view controller, defined in the annotation of the tweet entity
+    _entity_view: 'tweet_view_tweet'
+    _title: 'Tweet Content'
+  requirements:
+  # Calls the access controller of the entity, $operation 'view'
+    _entity_access: 'tweet_view_tweet.view'
+
+entity.tweet_view_tweet.collection:
+  path: '/view-tweet/list'
+  defaults:
+  # Calls the list controller, defined in the annotation of the tweet entity.
+    _entity_list: 'tweet_view_tweet'
+    _title: 'Tweet url list'
+  requirements:
+  # Checks for permission directly.
+    _permission: 'view tweet entity'
+
+tweet_view.tweet_add:
+  path: '/view-tweet/add'
+  defaults:
+  # Calls the form.add controller, defined in the tweet entity.
+    _entity_form: tweet_view_tweet.add
+    _title: 'Add Tweet Url'
+  requirements:
+    _entity_create_access: 'tweet_view_tweet'
+
+entity.tweet_view_tweet.edit_form:
+  path: '/view-tweet/{tweet_view_tweet}/edit'
+  defaults:
+  # Calls the form.edit controller, defined in the tweet entity.
+    _entity_form: tweet_view_tweet.edit
+    _title: 'Edit Tweet URL'
+  requirements:
+    _entity_access: 'tweet_view_tweet.edit'
+
+entity.tweet_view_tweet.delete_form:
+  path: '/view-tweet/{tweet_view_tweet}/delete'
+  defaults:
+    # Calls the form.delete controller, defined in the tweet entity.
+    _entity_form: tweet_view_tweet.delete
+    _title: 'Delete Tweet'
+  requirements:
+    _entity_access: 'tweet_view_tweet.delete'
+
+tweet_view.tweet_settings:
+  path: 'admin/structure/tweet_view_tweet_settings'
+  defaults:
+    _form: '\Drupal\tweet_view\Form\TweetSettingsForm'
+    _title: 'Tweet Settings'
+  requirements:
+    _permission: 'administer tweet entity'

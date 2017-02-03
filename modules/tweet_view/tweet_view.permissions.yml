@@ -1,0 +1,10 @@
+'delete tweet entity':
+  title: Delete entity content.
+'add tweet entity':
+  title: Add entity content
+'view tweet entity':
+  title: View entity content
+'edit tweet entity':
+  title: Edit entity content
+'administer tweet entity':
+  title: Administer settings

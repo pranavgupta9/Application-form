@@ -1,0 +1,77 @@
+<?php
+
+/**
+ * @file
+ * Defines simple apllicationform field type.
+ */
+
+/**
+ * Implements hook_schema().
+ *
+ * Defines the database tables used by this module.
+ *
+ * @see hook_schema()
+ *
+ * @ingroup applicationform
+ */
+function applicationform_schema() {
+  $schema['application_form'] = array(
+    'fields' => array(
+      'Id' => [
+        'type' => serial,
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'First_Name' => array(
+        'type' => 'varchar',
+        'length' => 50,
+        'not null' => TRUE,
+      ),
+      'Last_Name' => array(
+        'type' => 'varchar',
+        'length' => 40,
+        'not null' => TRUE,
+      ),
+      'Address' => array(
+        'type' => 'varchar',
+        'length' => 80,
+        'not null' => TRUE,
+      ),
+      'Email_ID' => array(
+        'type' => 'varchar',
+        'length' => 50,
+        'not null' => TRUE,
+      ),
+      'Number' => array(
+        'type' => 'varchar',
+        'length' => 20,
+        'not null' => TRUE,
+      ),
+      'Date_Of_Birth' => array(
+        'type' => 'varchar',
+        'length' => 50,
+        'not null' => TRUE,
+      ),
+      'Gender' => array(
+        'type' => 'varchar',
+        'length' => 10,
+        'not null' => TRUE,
+      ),
+      'Country' => array(
+        'type' => 'varchar',
+        'length' => 10,
+        'not null' => TRUE,
+      ),
+      'Postal_Code' => array(
+        'type' => 'varchar',
+        'length' => 40,
+        'not null' => TRUE,
+      ),
+    ),
+
+    'primary key' => array('Id'),
+  ),
+  );
+
+  return $schema;
+}

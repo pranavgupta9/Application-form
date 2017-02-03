@@ -1,0 +1,39 @@
+applicationform.form:
+  path: 'add/candidate'
+  defaults:
+    _title: 'Application form'
+    _form: 'Drupal\applicationform\Form\addcandidate'
+
+  requirements:
+    _permission: 'access content'
+
+
+applicationform.candidatelist:
+  path: 'allcandidate/entries'
+  defaults:
+    _title: 'All Candidates List'
+    _controller: '\Drupal\applicationform\controller\candidatelists::viewData'
+  requirements:
+    _permission: 'access content'
+
+
+
+applicationform.modifyentry:
+  path: 'modify/candidate'
+  defaults:
+    _title: 'Edit Candidate'
+    _form: '\Drupal\applicationform\Form\modifycandidateentry'
+
+  requirements:
+    _permission: 'access content'
+
+
+
+applicationform.deletecandidate:
+  path: 'delete/entry'
+  defaults:
+    _title: 'Delete candidate'
+    _controller: '\Drupal\applicationform\controller\deletecandidate::deleteData'
+
+  requirements:
+    _permission: 'access content'

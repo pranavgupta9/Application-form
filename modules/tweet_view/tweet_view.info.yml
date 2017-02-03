@@ -1,0 +1,7 @@
+name: View Tweet
+type: module
+description: 'Provides Url For Retweet.'
+package: View Tweet
+
+version: '8.x-1.x-dev'
+core: '8.x'
